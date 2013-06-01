@@ -15,7 +15,7 @@ Teisės
       year={2003}
     }
 
-Man nepriklauso garsyno autorystės teisės ir dėl naudojimosi garsynu pirma turi susiekite su jais.
+Man NEpriklauso garsyno autorystės teisės ir dėl naudojimosi garsynu pirma turi susiekite su jais.
 
 Reikalavimai
 --------
@@ -32,7 +32,8 @@ Pagrindinės apmokymui direktorijos:
 *   `training/lt/wav44` - turi būti saugomi mswav 16bit 44kHz formatu. skriptai iš šio katalogo transformuos į 16kHz 16bit formatą, kuris tinka Sphinx
 
 ###  Garsyno Sphinx paruošimo procedūra
-*   nukopijuokite wav ir Textgrid failus į wav44. taip kad kiekviena subdirektorija atitiktų vieną kalbėtoją:
+*   Pakeiskite absoliutų kelią iki apmokinimo direktorijos konfigūraciniame faile `training/lt/etc/sphinx_train.cfg`. `$CFG_BASE_DIR=$SOURCE_DIR/lt-pocketsphinx-tutorial/training/lt` vietoj $SOURCE_DIR turėtumete įrašyti kur nesiklonavote repozitorija.
+*   Nukopijuokite wav ir Textgrid failus į wav44. taip kad kiekviena subdirektorija atitiktų vieną kalbėtoją:
     * `training/lt/wav/bj1`,
     * `training/lt/wav/lk1`,
     * `training/lt/wav/tk1`,

@@ -12,10 +12,11 @@ Reikalavimai
 --------
 
  * Linux
- 
+ * Apmokintas Sphinx Model [training](../training). 
+
 ### PocketSphinx
 
-Sukompiliuoti ir įdiegti nightly snapshot sphinxbase ir pocketsphinx iš http://cmusphinx.sourceforge.net/wiki/download/
+Sukompiliuoti ir įdiegti nightly snapshot sphinxbase ir pocketsphinx iš [CMU Sphinx Download](http://cmusphinx.sourceforge.net/wiki/download/)
  
 
 Gramatika grįstas aptikimas
@@ -64,27 +65,32 @@ Sugeneruota (`robot.dict`):
 
 ### Paleidimas
 
+Nusikopijuokite rankomis apmokintą garsyno modelį [lt.cd_cont_200](../training/lt/model_parameters/lt.cd_cont_200) į `models/hmm`
+
 Lengviausias būdas išbandyti šnekos atpažintuvą pasinaudojant komanda `pocketsphinx_continuous`. Paleiskite:
 
-    pocketsphinx_continuous -hmm models/hmm/lt.cd_cont_200 -jsgf models/lm/robot.jsgf -dict robot.dict
+    pocketsphinx_continuous -hmm models/hmm/lt.cd_cont_200 -jsgf models/lm/robot.jsgf -dict models/dict/robot.dict
     
 Ištarkite į mikrofoną `eik penkis metrus pirmyn`. Ekrane turi pasirodyti:
 
     [..]
-    INFO: fsg_search.c(1456): End node <sil>.212:214:220 (-485)
-    INFO: fsg_search.c(1456): End node pirmyn.162:190:220 (-505)
-    INFO: fsg_search.c(1681): lattice start node <s>.0 end node </s>.221
-    INFO: ps_lattice.c(1365): Normalizer P(O) = alpha(</s>:221:221) = -184664
-    INFO: ps_lattice.c(1403): Joint P(O,S) = -184677 P(S|O) = -13
-    000000001: eik penkis metrus pirmyn
+    INFO: fsg_search.c(1417): Start node <sil>.0:2:17
+    INFO: fsg_search.c(1417): Start node <sil>.0:2:17
+    INFO: fsg_search.c(1417): Start node <sil>.0:2:17
+    INFO: fsg_search.c(1456): End node DEŠINĖN.30:60:87 (-1618)
+    INFO: fsg_search.c(1680): lattice start node <s>.0 end node DEŠINĖN.30
+    INFO: ps_lattice.c(1365): Normalizer P(O) = alpha(DEŠINĖN:30:87) = -59135
+    INFO: ps_lattice.c(1403): Joint P(O,S) = -59135 P(S|O) = 0
+    000000001: SUK DEŠINĖN
     READY....
 
 
-### Savarankiškas atpažintuvas
+
+### Atpažintuvo patikrinimas
 
 Šnekos atpažintuvas lengva išbandyti su pateiktais audio failais. Direktorijoje `test/audio` rasite 3 failus. Kiekviename faile yra įrašytos ištartos komandos.
 
-Norint išbandyti atpažintuvą su jau esančiais audiofailais reikia naudoti komandą: `pocketsphinx_batch`. Kaip argumento ši komanda reikalauja konfiguracinio failo pvz: `test/pocketsphinx.conf`.
+Norint išbandyti atpažintuvą su jau esančiais audiofailais reikia naudoti komandą: `pocketsphinx_batch`. Kaip argumento ši komanda reikalauja konfiguracinio failo pavizdys yra  `test/pocketsphinx.conf`.
 
 Paleiskite (kataloge `test`):
 
@@ -92,9 +98,9 @@ Paleiskite (kataloge `test`):
 
 Atpažintos komandos bus įrašytos `test.hyp`:
     
-    eik tris metrus pirmyn (test1 -4627)
-    suk dešinėn (test2 -3687)
-    varyk atgal (test3 -4212)
+    VARYK PIRMYN (test1 -4927)
+    VARYK PENKIS METRUS ATGAL (test2 -7555)
+    SUK DEŠINĖN (test3 -3853)
 
 Kiekvienoje eilutėje yra komanda ir skliausteliuose nurodomas failo vardas ir atpažinimo taškai.
 
