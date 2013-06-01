@@ -1,0 +1,751 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+<meta http-equiv="REFRESH" content="60">
+<title>lt</title>
+<style type="text/css">
+body {
+ background: #f0f0f5;
+}
+p,span {
+ font-family: monospace;
+}
+p {
+ margin-right: 6em;
+}
+p.phase {
+ font-weight: bold;
+ margin-bottom: 0;
+}
+p.result, p.WARNING, p.error {
+ margin-top: 0;
+ margin-bottom: 0;
+ margin-left: 5em;
+}
+span.status {
+ float: right;
+ margin-top: -1em;
+}
+.passed, .completed {
+ color: #00D000;
+}
+.WARNING, .warning {
+ color: #555500;
+}
+.FAILED, .error {
+ color: #DD0000;
+}
+</style>
+</head>
+<body>
+<h1 class="experiment">/home/as/tmp/sphinx/lt</h1>
+<h2 class="hostname">Training lt on mgreibus</h2>
+<hr>
+<h3>MODULE: 000 Computing feature from audio files	(2013-06-01 12:01)</h3>
+<p class='audio files'>Extracting features from  segments starting at  (part 1 of 1) </p>
+<p class='result'>sphinx_fe <a href="file:///home/as/tmp/sphinx/lt/logdir/000.comp_feat/lt.train-1-1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='audio files'>Extracting features from  segments starting at  (part 1 of 1) </p>
+<p class='result'>sphinx_fe <a href="file:///home/as/tmp/sphinx/lt/logdir/000.comp_feat/lt.test-1-1.log">Log File</a></p><span class='status completed'>completed</span>
+<p>Feature extraction is done</p>
+<hr>
+<h3>MODULE: 00 verify training files	(2013-06-01 12:02)</h3>
+<p class='phase'>Phase 1: Checking to see if the dict and filler dict agrees with the phonelist file.</p>
+<p class='result'>Found 1556 words using 62 phones</p>
+<span class='status passed'>passed</span>
+<p class='phase'>Phase 2: Checking to make sure there are not duplicate entries in the dictionary</p>
+<span class='status passed'>passed</span>
+<p class='phase'>Phase 3: Check general format for the fileids file; utterance length (must be positive); files exist</p>
+<span class='status passed'>passed</span>
+<p class='phase'>Phase 4: Checking number of lines in the transcript file should match lines in fileids file</p>
+<span class='status passed'>passed</span>
+<p class='phase'>Phase 5: Determine amount of training data, see if n_tied_states seems reasonable.</p>
+<p class='result'>Estimated Total Hours Training: 1.61723055555556</p>
+<p class='result'>This is a small amount of data, no comment at this time</p>
+<span class='status WARNING'>WARNING</span>
+<p class='phase'>Phase 6: Checking that all the words in the transcript are in the dictionary</p>
+<p class='result'>Words in dictionary: 1553</p>
+<p class='result'>Words in filler dictionary: 3</p>
+<span class='status passed'>passed</span>
+<p class='phase'>Phase 7: Checking that all the phones in the transcript are in the phonelist, and all phones in the phonelist appear at least once</p>
+<span class='status passed'>passed</span>
+<hr>
+<h3>MODULE: 0000 train grapheme-to-phoneme model	(2013-06-01 12:02)</h3>
+<p>Skipped (set $CFG_G2P_MODEL = 'yes' to enable)</p>
+<hr>
+<h3>MODULE: 01 Train LDA transformation	(2013-06-01 12:02)</h3>
+<p>Skipped (set $CFG_LDA_MLLT = 'yes' to enable)</p>
+<hr>
+<h3>MODULE: 02 Train MLLT transformation	(2013-06-01 12:02)</h3>
+<p>Skipped (set $CFG_LDA_MLLT = 'yes' to enable)</p>
+<hr>
+<h3>MODULE: 05 Vector Quantization	(2013-06-01 12:02)</h3>
+<p>Skipped for continuous models</p>
+<hr>
+<h3>MODULE: 10 Training Context Independent models for forced alignment and VTLN	(2013-06-01 12:02)</h3>
+<p>Skipped:  $ST::CFG_FORCEDALIGN set to 'no' in sphinx_train.cfg</p>
+<p>Skipped:  $ST::CFG_VTLN set to 'no' in sphinx_train.cfg</p>
+<hr>
+<h3>MODULE: 11 Force-aligning transcripts	(2013-06-01 12:02)</h3>
+<p>Skipped:  $ST::CFG_FORCEDALIGN set to 'no' in sphinx_train.cfg</p>
+<hr>
+<h3>MODULE: 12 Force-aligning data for VTLN	(2013-06-01 12:02)</h3>
+<p>Skipped:  $ST::CFG_VTLN set to 'no' in sphinx_train.cfg</p>
+<hr>
+<h3>MODULE: 20 Training Context Independent models	(2013-06-01 12:02)</h3>
+<p class='phase'>Phase 1: Cleaning up directories:</p>
+<span class='progress'>	accumulator...</span>
+<span class='progress'>logs...</span>
+<span class='progress'>qmanager...</span>
+<span class='progress'>models...
+</span>
+<span class='status completed'>completed</span>
+<p class='phase'>Phase 2: Flat initialize</p>
+<p class='result'>mk_mdef_gen <a href="file:///home/as/tmp/sphinx/lt/logdir/20.ci_hmm/lt.make_ci_mdef_fromphonelist.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>mk_flat <a href="file:///home/as/tmp/sphinx/lt/logdir/20.ci_hmm/lt.makeflat_cihmm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>init_gau <a href="file:///home/as/tmp/sphinx/lt/logdir/20.ci_hmm/lt.initmean_cihmm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>norm <a href="file:///home/as/tmp/sphinx/lt/logdir/20.ci_hmm/lt.normmean_cihmm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>init_gau <a href="file:///home/as/tmp/sphinx/lt/logdir/20.ci_hmm/lt.initvar_cihmm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>norm <a href="file:///home/as/tmp/sphinx/lt/logdir/20.ci_hmm/lt.normvar_cihmm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>cp_parm <a href="file:///home/as/tmp/sphinx/lt/logdir/20.ci_hmm/lt.cpmean_cihmm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>cp_parm <a href="file:///home/as/tmp/sphinx/lt/logdir/20.ci_hmm/lt.cpvar_cihmm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='phase'>Phase 3: Forward-Backward</p>
+<p class='result'>Baum welch starting for 1 Gaussian(s), iteration: 1 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/as/tmp/sphinx/lt/logdir/20.ci_hmm/lt.1.1-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 1</p>
+<p class='result'>norm <a href="file:///home/as/tmp/sphinx/lt/logdir/20.ci_hmm/lt.1.1.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -16.1086425181595</p>
+<p class='result'>Baum welch starting for 1 Gaussian(s), iteration: 2 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/as/tmp/sphinx/lt/logdir/20.ci_hmm/lt.1.2-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 2</p>
+<p class='result'>norm <a href="file:///home/as/tmp/sphinx/lt/logdir/20.ci_hmm/lt.1.2.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -15.5278554043864</p>
+<p class='result'>Convergence Ratio = 0.580787113773056</p>
+<p class='result'>Baum welch starting for 1 Gaussian(s), iteration: 3 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/as/tmp/sphinx/lt/logdir/20.ci_hmm/lt.1.3-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 3</p>
+<p class='result'>norm <a href="file:///home/as/tmp/sphinx/lt/logdir/20.ci_hmm/lt.1.3.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -11.791260093129</p>
+<p class='result'>Convergence Ratio = 3.73659531125737</p>
+<p class='result'>Baum welch starting for 1 Gaussian(s), iteration: 4 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/as/tmp/sphinx/lt/logdir/20.ci_hmm/lt.1.4-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 4</p>
+<p class='result'>norm <a href="file:///home/as/tmp/sphinx/lt/logdir/20.ci_hmm/lt.1.4.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -10.1184397881838</p>
+<p class='result'>Convergence Ratio = 1.67282030494516</p>
+<p class='result'>Baum welch starting for 1 Gaussian(s), iteration: 5 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/as/tmp/sphinx/lt/logdir/20.ci_hmm/lt.1.5-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 5</p>
+<p class='result'>norm <a href="file:///home/as/tmp/sphinx/lt/logdir/20.ci_hmm/lt.1.5.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -9.76636843162952</p>
+<p class='result'>Convergence Ratio = 0.352071356554282</p>
+<p class='result'>Baum welch starting for 1 Gaussian(s), iteration: 6 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/as/tmp/sphinx/lt/logdir/20.ci_hmm/lt.1.6-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 6</p>
+<p class='result'>norm <a href="file:///home/as/tmp/sphinx/lt/logdir/20.ci_hmm/lt.1.6.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -9.67241494805077</p>
+<p class='result'>Training completed after 6 iterations</p>
+<hr>
+<h3>MODULE: 30 Training Context Dependent models	(2013-06-01 12:03)</h3>
+<p class='phase'>Phase 1: Cleaning up directories:</p>
+<span class='progress'>	accumulator...</span>
+<span class='progress'>logs...</span>
+<span class='progress'>qmanager...
+</span>
+<span class='status completed'>completed</span>
+<p class='phase'>Phase 2: Initialization</p>
+<p class='result'>mk_mdef_gen <a href="file:///home/as/tmp/sphinx/lt/logdir/30.cd_hmm_untied/lt.make_alltriphonelist.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>init_mixw <a href="file:///home/as/tmp/sphinx/lt/logdir/30.cd_hmm_untied/lt.copycitocd.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='phase'>Phase 3: Forward-Backward</p>
+<p class='result'>Baum welch starting for iteration: 1 (1 of 1) </p>
+<p class='result'>bw <a href="file:///home/as/tmp/sphinx/lt/logdir/30.cd_hmm_untied/lt.1-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 1</p>
+<p class='result'>norm <a href="file:///home/as/tmp/sphinx/lt/logdir/30.cd_hmm_untied/lt.1.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -9.63673151804439</p>
+<p class='result'>Baum welch starting for iteration: 2 (1 of 1) </p>
+<p class='result'>bw <a href="file:///home/as/tmp/sphinx/lt/logdir/30.cd_hmm_untied/lt.2-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 2</p>
+<p class='result'>norm <a href="file:///home/as/tmp/sphinx/lt/logdir/30.cd_hmm_untied/lt.2.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -5.12523810423512</p>
+<p class='result'>Convergence Ratio = 4.51149341380927</p>
+<p class='result'>Baum welch starting for iteration: 3 (1 of 1) </p>
+<p class='result'>bw <a href="file:///home/as/tmp/sphinx/lt/logdir/30.cd_hmm_untied/lt.3-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 3</p>
+<p class='result'>norm <a href="file:///home/as/tmp/sphinx/lt/logdir/30.cd_hmm_untied/lt.3.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -3.76325439752114</p>
+<p class='result'>Convergence Ratio = 1.36198370671398</p>
+<p class='result'>Baum welch starting for iteration: 4 (1 of 1) </p>
+<p class='result'>bw <a href="file:///home/as/tmp/sphinx/lt/logdir/30.cd_hmm_untied/lt.4-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 4</p>
+<p class='result'>norm <a href="file:///home/as/tmp/sphinx/lt/logdir/30.cd_hmm_untied/lt.4.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -3.6030834605799</p>
+<p class='result'>Convergence Ratio = 0.160170936941239</p>
+<p class='result'>Baum welch starting for iteration: 5 (1 of 1) </p>
+<p class='result'>bw <a href="file:///home/as/tmp/sphinx/lt/logdir/30.cd_hmm_untied/lt.5-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 5</p>
+<p class='result'>norm <a href="file:///home/as/tmp/sphinx/lt/logdir/30.cd_hmm_untied/lt.5.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -3.5305091179537</p>
+<p class='result'>Training completed after 5 iterations</p>
+<hr>
+<h3>MODULE: 40 Build Trees	(2013-06-01 12:03)</h3>
+<p class='phase'>Phase 1: Cleaning up old log files...</p>
+<p class='phase'>Phase 2: Make Questions</p>
+<p class='result'>make_quests <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.make_questions.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='phase'>Phase 3: Tree building</p>
+<p class='result'>Processing each phone with each state</p>
+<p class='result'>A 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.A.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>A 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.A.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>A 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.A.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>A1 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.A1.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>A1 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.A1.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>A1 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.A1.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>AA 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.AA.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>AA 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.AA.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>AA 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.AA.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>AA1 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.AA1.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>AA1 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.AA1.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>AA1 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.AA1.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>AI 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.AI.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>AI 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.AI.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>AI 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.AI.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>AI2 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.AI2.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>AI2 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.AI2.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>AI2 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.AI2.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>AU 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.AU.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>AU 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.AU.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>AU 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.AU.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>AU1 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.AU1.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>AU1 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.AU1.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>AU1 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.AU1.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>AU2 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.AU2.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>AU2 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.AU2.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>AU2 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.AU2.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>B 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.B.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>B 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.B.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>B 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.B.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>CH 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.CH.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>CH 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.CH.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>CH 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.CH.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>D 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.D.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>D 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.D.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>D 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.D.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>E 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.E.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>E 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.E.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>E 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.E.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>E1 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.E1.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>E1 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.E1.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>E1 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.E1.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>EA 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.EA.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>EA 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.EA.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>EA 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.EA.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>EA2 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.EA2.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>EA2 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.EA2.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>EA2 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.EA2.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>EH 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.EH.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>EH 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.EH.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>EH 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.EH.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>EH1 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.EH1.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>EH1 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.EH1.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>EH1 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.EH1.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>EH2 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.EH2.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>EH2 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.EH2.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>EH2 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.EH2.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>EI 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.EI.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>EI 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.EI.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>EI 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.EI.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>EI2 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.EI2.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>EI2 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.EI2.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>EI2 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.EI2.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>EL 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.EL.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>EL 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.EL.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>EL 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.EL.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>EU 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.EU.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>EU 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.EU.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>EU 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.EU.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>F 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.F.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>F 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.F.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>F 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.F.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>G 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.G.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>G 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.G.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>G 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.G.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>IE 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.IE.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>IE 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.IE.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>IE 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.IE.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>IE1 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.IE1.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>IE1 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.IE1.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>IE1 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.IE1.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>IE2 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.IE2.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>IE2 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.IE2.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>IE2 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.IE2.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>IH 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.IH.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>IH 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.IH.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>IH 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.IH.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>IH1 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.IH1.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>IH1 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.IH1.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>IH1 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.IH1.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>IH2 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.IH2.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>IH2 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.IH2.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>IH2 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.IH2.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>IY 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.IY.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>IY 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.IY.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>IY 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.IY.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>IY1 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.IY1.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>IY1 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.IY1.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>IY1 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.IY1.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>IY2 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.IY2.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>IY2 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.IY2.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>IY2 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.IY2.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>K 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.K.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>K 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.K.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>K 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.K.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>L 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.L.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>L 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.L.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>L 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.L.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>L2 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.L2.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>L2 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.L2.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>L2 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.L2.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>M 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.M.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>M 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.M.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>M 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.M.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>M2 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.M2.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>M2 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.M2.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>M2 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.M2.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>N 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.N.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>N 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.N.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>N 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.N.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>N2 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.N2.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>N2 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.N2.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>N2 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.N2.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>O 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.O.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>O 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.O.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>O 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.O.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>OO 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.OO.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>OO 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.OO.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>OO 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.OO.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>P 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.P.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>P 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.P.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>P 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.P.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>R 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.R.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>R 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.R.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>R 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.R.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>R2 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.R2.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>R2 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.R2.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>R2 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.R2.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>S 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.S.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>S 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.S.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>S 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.S.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>SH 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.SH.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>SH 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.SH.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>SH 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.SH.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Skipping SIL</p>
+<p class='result'>T 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.T.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>T 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.T.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>T 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.T.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>UH 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.UH.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>UH 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.UH.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>UH 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.UH.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>UH1 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.UH1.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>UH1 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.UH1.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>UH1 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.UH1.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>UI 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.UI.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>UI 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.UI.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>UI 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.UI.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>UO 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.UO.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>UO 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.UO.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>UO 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.UO.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>UW 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.UW.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>UW 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.UW.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>UW 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.UW.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>UW1 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.UW1.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>UW1 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.UW1.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>UW1 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.UW1.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>V 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.V.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>V 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.V.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>V 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.V.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>ww 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.ww.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>ww 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.ww.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>ww 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.ww.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>X 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.X.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>X 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.X.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>X 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.X.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Y 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.Y.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Y 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.Y.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Y 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.Y.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Z 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.Z.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Z 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.Z.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Z 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.Z.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>ZH 0 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.ZH.0.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>ZH 1 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.ZH.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>ZH 2 </p>
+<p class='result'>bldtree <a href="file:///home/as/tmp/sphinx/lt/logdir/40.buildtrees/lt.buildtree.ZH.2.log">Log File</a></p><span class='status completed'>completed</span>
+<hr>
+<h3>MODULE: 45 Prune Trees	(2013-06-01 12:04)</h3>
+<p class='result'>mk_mdef_gen <a href="file:///home/as/tmp/sphinx/lt/logdir/45.prunetree/lt.build.alltriphones.mdef.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='phase'>Phase 1: Tree Pruning</p>
+<p class='result'>prunetree <a href="file:///home/as/tmp/sphinx/lt/logdir/45.prunetree/lt.prunetree.200.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='phase'>Phase 2: State Tying</p>
+<p class='result'>tiestate <a href="file:///home/as/tmp/sphinx/lt/logdir/45.prunetree/lt.tiestate.200.log">Log File</a></p><span class='status completed'>completed</span>
+<hr>
+<h3>MODULE: 50 Training Context dependent models	(2013-06-01 12:04)</h3>
+<p class='phase'>Phase 1: Cleaning up directories:</p>
+<span class='progress'>	accumulator...</span>
+<span class='progress'>logs...</span>
+<span class='progress'>qmanager...
+</span>
+<span class='status completed'>completed</span>
+<p class='phase'>Phase 2: Copy CI to CD initialize</p>
+<p class='result'>init_mixw <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.copy.ci.2.cd.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='phase'>Phase 3: Forward-Backward</p>
+<p class='result'>Baum welch starting for 1 Gaussian(s), iteration: 1 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.1.1-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 1</p>
+<p class='result'>norm <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.1.1.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -9.63673151804439</p>
+<p class='result'>Baum welch starting for 1 Gaussian(s), iteration: 2 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.1.2-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 2</p>
+<p class='result'>norm <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.1.2.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -9.34019749125305</p>
+<p class='result'>Convergence Ratio = 0.29653402679134</p>
+<p class='result'>Baum welch starting for 1 Gaussian(s), iteration: 3 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.1.3-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 3</p>
+<p class='result'>norm <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.1.3.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -9.29101533313982</p>
+<p class='result'>Split Gaussians, increase by 1</p>
+<p class='result'>inc_comp <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.split_gaussians.1.1.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -9.29101533313982</p>
+<p class='result'>Convergence Ratio = 0.0491821581132346</p>
+<p class='result'>Baum welch starting for 2 Gaussian(s), iteration: 1 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.2.1-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 1</p>
+<p class='result'>norm <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.2.1.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -9.84671325980801</p>
+<p class='result'>Baum welch starting for 2 Gaussian(s), iteration: 2 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.2.2-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 2</p>
+<p class='result'>norm <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.2.2.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -9.15925544870088</p>
+<p class='result'>Convergence Ratio = 0.687457811107127</p>
+<p class='result'>Baum welch starting for 2 Gaussian(s), iteration: 3 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.2.3-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 3</p>
+<p class='result'>norm <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.2.3.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -8.75107136170717</p>
+<p class='result'>Convergence Ratio = 0.40818408699371</p>
+<p class='result'>Baum welch starting for 2 Gaussian(s), iteration: 4 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.2.4-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 4</p>
+<p class='result'>norm <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.2.4.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -8.32613538576751</p>
+<p class='result'>Convergence Ratio = 0.424935975939663</p>
+<p class='result'>Baum welch starting for 2 Gaussian(s), iteration: 5 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.2.5-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 5</p>
+<p class='result'>norm <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.2.5.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -8.11495131423232</p>
+<p class='result'>Convergence Ratio = 0.211184071535188</p>
+<p class='result'>Baum welch starting for 2 Gaussian(s), iteration: 6 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.2.6-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 6</p>
+<p class='result'>norm <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.2.6.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -8.01140839191828</p>
+<p class='result'>Convergence Ratio = 0.103542922314038</p>
+<p class='result'>Baum welch starting for 2 Gaussian(s), iteration: 7 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.2.7-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 7</p>
+<p class='result'>norm <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.2.7.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -7.94956398369641</p>
+<p class='result'>Split Gaussians, increase by 2</p>
+<p class='result'>inc_comp <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.split_gaussians.2.2.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -7.94956398369641</p>
+<p class='result'>Convergence Ratio = 0.0618444082218721</p>
+<p class='result'>Baum welch starting for 4 Gaussian(s), iteration: 1 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.4.1-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 1</p>
+<p class='result'>norm <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.4.1.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -8.48482402186179</p>
+<p class='result'>Baum welch starting for 4 Gaussian(s), iteration: 2 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.4.2-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 2</p>
+<p class='result'>norm <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.4.2.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -7.80547506625696</p>
+<p class='result'>Convergence Ratio = 0.679348955604832</p>
+<p class='result'>Baum welch starting for 4 Gaussian(s), iteration: 3 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.4.3-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 3</p>
+<p class='result'>norm <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.4.3.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -7.48404250751027</p>
+<p class='result'>Convergence Ratio = 0.321432558746693</p>
+<p class='result'>Baum welch starting for 4 Gaussian(s), iteration: 4 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.4.4-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 4</p>
+<p class='result'>norm <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.4.4.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -7.11404956690364</p>
+<p class='result'>Convergence Ratio = 0.36999294060663</p>
+<p class='result'>Baum welch starting for 4 Gaussian(s), iteration: 5 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.4.5-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 5</p>
+<p class='result'>norm <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.4.5.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -6.8936470612484</p>
+<p class='result'>Convergence Ratio = 0.220402505655244</p>
+<p class='result'>Baum welch starting for 4 Gaussian(s), iteration: 6 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.4.6-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 6</p>
+<p class='result'>norm <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.4.6.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -6.77796576108333</p>
+<p class='result'>Convergence Ratio = 0.115681300165067</p>
+<p class='result'>Baum welch starting for 4 Gaussian(s), iteration: 7 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.4.7-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 7</p>
+<p class='result'>norm <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.4.7.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -6.70642542206069</p>
+<p class='result'>Split Gaussians, increase by 4</p>
+<p class='result'>inc_comp <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.split_gaussians.4.4.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -6.70642542206069</p>
+<p class='result'>Convergence Ratio = 0.0715403390226399</p>
+<p class='result'>Baum welch starting for 8 Gaussian(s), iteration: 1 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.8.1-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 1</p>
+<p class='result'>norm <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.8.1.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -7.22483910251235</p>
+<p class='result'>Baum welch starting for 8 Gaussian(s), iteration: 2 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.8.2-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 2</p>
+<p class='result'>norm <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.8.2.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -6.53273686325903</p>
+<p class='result'>Convergence Ratio = 0.692102239253315</p>
+<p class='result'>Baum welch starting for 8 Gaussian(s), iteration: 3 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.8.3-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 3</p>
+<p class='result'>norm <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.8.3.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -6.20285879667401</p>
+<p class='result'>Convergence Ratio = 0.329878066585018</p>
+<p class='result'>Baum welch starting for 8 Gaussian(s), iteration: 4 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.8.4-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 4</p>
+<p class='result'>norm <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.8.4.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -5.8181373163656</p>
+<p class='result'>Convergence Ratio = 0.384721480308412</p>
+<p class='result'>Baum welch starting for 8 Gaussian(s), iteration: 5 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.8.5-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 5</p>
+<p class='result'>norm <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.8.5.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -5.58946621710984</p>
+<p class='result'>Convergence Ratio = 0.228671099255761</p>
+<p class='result'>Baum welch starting for 8 Gaussian(s), iteration: 6 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.8.6-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 6</p>
+<p class='result'>norm <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.8.6.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -5.46649879852904</p>
+<p class='result'>Convergence Ratio = 0.122967418580805</p>
+<p class='result'>Baum welch starting for 8 Gaussian(s), iteration: 7 (1 of 1)</p>
+<p class='result'>bw <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.8.7-1.bw.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Normalization for iteration: 7</p>
+<p class='result'>norm <a href="file:///home/as/tmp/sphinx/lt/logdir/50.cd_hmm_tied/lt.8.7.norm.log">Log File</a></p><span class='status completed'>completed</span>
+<p class='result'>Current Overall Likelihood Per Frame = -5.39201618679395</p>
+<p>Training for 8 Gaussian(s) completed after 7 iterations</p>
+<hr>
+<h3>MODULE: 60 Lattice Generation	(2013-06-01 12:09)</h3>
+<p>Skipped:  $ST::CFG_MMIE set to 'no' in sphinx_train.cfg</p>
+<hr>
+<h3>MODULE: 61 Lattice Pruning	(2013-06-01 12:09)</h3>
+<p>Skipped:  $ST::CFG_MMIE set to 'no' in sphinx_train.cfg</p>
+<hr>
+<h3>MODULE: 62 Lattice Format Conversion	(2013-06-01 12:09)</h3>
+<p>Skipped:  $ST::CFG_MMIE set to 'no' in sphinx_train.cfg</p>
+<hr>
+<h3>MODULE: 65 MMIE Training	(2013-06-01 12:09)</h3>
+<p>Skipped:  $ST::CFG_MMIE set to 'no' in sphinx_train.cfg</p>
+<hr>
+<h3>MODULE: 90 deleted interpolation	(2013-06-01 12:09)</h3>
+<p>Skipped for continuous models</p>
+<hr>
+<h3>MODULE: DECODE Decoding using models previously trained	(2013-06-01 12:09)</h3>
+<p class='result'>Decoding 108 segments starting at 0 (part 1 of 1) </p>
+<p class='result'>pocketsphinx_batch <a href="file:///home/as/tmp/sphinx/lt/logdir/decode/lt-1-1.log">Log File</a></p><p class='error'>This step had 24 ERROR messages and 0 WARNING messages.  Please check the log file for details.</p>
+<span class='status completed'>completed</span>
+<p>        Aligning results to find error rate</p>
+<p class='result'>SENTENCE ERROR: 18.5% (20/108)   WORD ERROR RATE: 3.8% (31/810)</p>
+<p class='result'>

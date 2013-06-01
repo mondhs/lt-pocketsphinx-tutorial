@@ -1,0 +1,472 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 3.729954648526077 
+tiers? <exists> 
+size = 4 
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "garsai" 
+        xmin = 0 
+        xmax = 3.729954648526077 
+        intervals: size = 35 
+        intervals [1]:
+            xmin = 0 
+            xmax = 0.20000000000000001 
+            text = "..." 
+        intervals [2]:
+            xmin = 0.20000000000000001 
+            xmax = 0.27945907168285067 
+            text = "l" 
+        intervals [3]:
+            xmin = 0.27945907168285067 
+            xmax = 0.33264540652870983 
+            text = "u" 
+        intervals [4]:
+            xmin = 0.33264540652870983 
+            xmax = 0.43015368707945167 
+            text = "b" 
+        intervals [5]:
+            xmin = 0.43015368707945167 
+            xmax = 0.51303572554758226 
+            text = """a" 
+        intervals [6]:
+            xmin = 0.51303572554758226 
+            xmax = 0.58654733825594529 
+            text = "z'" 
+        intervals [7]:
+            xmin = 0.58654733825594529 
+            xmax = 0.68805989121756883 
+            text = "g'" 
+        intervals [8]:
+            xmin = 0.68805989121756883 
+            xmax = 0.74479198171981864 
+            text = "i" 
+        intervals [9]:
+            xmin = 0.74479198171981864 
+            xmax = 0.80639948624960556 
+            text = "p" 
+        intervals [10]:
+            xmin = 0.80639948624960556 
+            xmax = 0.92304927278483018 
+            text = "s" 
+        intervals [11]:
+            xmin = 0.92304927278483018 
+            xmax = 0.97712204654478707 
+            text = """u" 
+        intervals [12]:
+            xmin = 0.97712204654478707 
+            xmax = 1.1161311727570094 
+            text = "p" 
+        intervals [13]:
+            xmin = 1.1161311727570094 
+            xmax = 1.2904306828140078 
+            text = "^uo" 
+        intervals [14]:
+            xmin = 1.2904306828140078 
+            xmax = 1.402565205447361 
+            text = "S'" 
+        intervals [15]:
+            xmin = 1.402565205447361 
+            xmax = 1.5440200928337271 
+            text = "e" 
+        intervals [16]:
+            xmin = 1.5440200928337271 
+            xmax = 1.944020092833727 
+            text = "..." 
+        intervals [17]:
+            xmin = 1.944020092833727 
+            xmax = 2.0686343953512143 
+            text = "g" 
+        intervals [18]:
+            xmin = 2.0686343953512143 
+            xmax = 2.134230874994441 
+            text = "r'" 
+        intervals [19]:
+            xmin = 2.134230874994441 
+            xmax = 2.264062981804321 
+            text = "^ei" 
+        intervals [20]:
+            xmin = 2.264062981804321 
+            xmax = 2.307498488595106 
+            text = "t" 
+        intervals [21]:
+            xmin = 2.307498488595106 
+            xmax = 2.3759051282109276 
+            text = "s" 
+        intervals [22]:
+            xmin = 2.3759051282109276 
+            xmax = 2.4437177051393979 
+            text = "m" 
+        intervals [23]:
+            xmin = 2.4437177051393979 
+            xmax = 2.5448810499111407 
+            text = "o:" 
+        intervals [24]:
+            xmin = 2.5448810499111407 
+            xmax = 2.6104775295543674 
+            text = "g'" 
+        intervals [25]:
+            xmin = 2.6104775295543674 
+            xmax = 2.6734146924553008 
+            text = "i" 
+        intervals [26]:
+            xmin = 2.6734146924553008 
+            xmax = 2.7760847780617182 
+            text = "k" 
+        intervals [27]:
+            xmin = 2.7760847780617182 
+            xmax = 2.8350329658492122 
+            text = """u" 
+        intervals [28]:
+            xmin = 2.8350329658492122 
+            xmax = 2.896948574719056 
+            text = "s" 
+        intervals [29]:
+            xmin = 2.896948574719056 
+            xmax = 2.9966729525550417 
+            text = "p" 
+        intervals [30]:
+            xmin = 2.9966729525550417 
+            xmax = 3.0820936264492027 
+            text = "a" 
+        intervals [31]:
+            xmin = 3.0820936264492027 
+            xmax = 3.1460680733595128 
+            text = "g" 
+        intervals [32]:
+            xmin = 3.1460680733595128 
+            xmax = 3.356122901895231 
+            text = "^a:" 
+        intervals [33]:
+            xmin = 3.356122901895231 
+            xmax = 3.4008880670571622 
+            text = "v" 
+        intervals [34]:
+            xmin = 3.4008880670571622 
+            xmax = 3.5299590352879884 
+            text = "o:" 
+        intervals [35]:
+            xmin = 3.5299590352879884 
+            xmax = 3.729954648526077 
+            text = "..." 
+    item [2]:
+        class = "IntervalTier" 
+        name = "HTKgarsai" 
+        xmin = 0 
+        xmax = 3.729954648526077 
+        intervals: size = 35 
+        intervals [1]:
+            xmin = 0 
+            xmax = 0.20000000000000001 
+            text = "..." 
+        intervals [2]:
+            xmin = 0.20000000000000001 
+            xmax = 0.27945907168285067 
+            text = "l" 
+        intervals [3]:
+            xmin = 0.27945907168285067 
+            xmax = 0.33264540652870983 
+            text = "u" 
+        intervals [4]:
+            xmin = 0.33264540652870983 
+            xmax = 0.43015368707945167 
+            text = "b" 
+        intervals [5]:
+            xmin = 0.43015368707945167 
+            xmax = 0.51303572554758226 
+            text = """a" 
+        intervals [6]:
+            xmin = 0.51303572554758226 
+            xmax = 0.58654733825594529 
+            text = "z'" 
+        intervals [7]:
+            xmin = 0.58654733825594529 
+            xmax = 0.68805989121756883 
+            text = "g'" 
+        intervals [8]:
+            xmin = 0.68805989121756883 
+            xmax = 0.74479198171981864 
+            text = "i" 
+        intervals [9]:
+            xmin = 0.74479198171981864 
+            xmax = 0.80639948624960556 
+            text = "p" 
+        intervals [10]:
+            xmin = 0.80639948624960556 
+            xmax = 0.92304927278483018 
+            text = "s" 
+        intervals [11]:
+            xmin = 0.92304927278483018 
+            xmax = 0.97712204654478707 
+            text = """u" 
+        intervals [12]:
+            xmin = 0.97712204654478707 
+            xmax = 1.1161311727570094 
+            text = "p" 
+        intervals [13]:
+            xmin = 1.1161311727570094 
+            xmax = 1.2904306828140078 
+            text = "^uo" 
+        intervals [14]:
+            xmin = 1.2904306828140078 
+            xmax = 1.402565205447361 
+            text = "S'" 
+        intervals [15]:
+            xmin = 1.402565205447361 
+            xmax = 1.5440200928337271 
+            text = "e" 
+        intervals [16]:
+            xmin = 1.5440200928337271 
+            xmax = 1.944020092833727 
+            text = "..." 
+        intervals [17]:
+            xmin = 1.944020092833727 
+            xmax = 2.0686343953512143 
+            text = "g" 
+        intervals [18]:
+            xmin = 2.0686343953512143 
+            xmax = 2.134230874994441 
+            text = "r'" 
+        intervals [19]:
+            xmin = 2.134230874994441 
+            xmax = 2.264062981804321 
+            text = "^ei" 
+        intervals [20]:
+            xmin = 2.264062981804321 
+            xmax = 2.307498488595106 
+            text = "t" 
+        intervals [21]:
+            xmin = 2.307498488595106 
+            xmax = 2.3759051282109276 
+            text = "s" 
+        intervals [22]:
+            xmin = 2.3759051282109276 
+            xmax = 2.4437177051393979 
+            text = "m" 
+        intervals [23]:
+            xmin = 2.4437177051393979 
+            xmax = 2.5448810499111407 
+            text = "o:" 
+        intervals [24]:
+            xmin = 2.5448810499111407 
+            xmax = 2.6104775295543674 
+            text = "g'" 
+        intervals [25]:
+            xmin = 2.6104775295543674 
+            xmax = 2.6734146924553008 
+            text = "i" 
+        intervals [26]:
+            xmin = 2.6734146924553008 
+            xmax = 2.7760847780617182 
+            text = "k" 
+        intervals [27]:
+            xmin = 2.7760847780617182 
+            xmax = 2.8350329658492122 
+            text = """u" 
+        intervals [28]:
+            xmin = 2.8350329658492122 
+            xmax = 2.896948574719056 
+            text = "s" 
+        intervals [29]:
+            xmin = 2.896948574719056 
+            xmax = 2.9966729525550417 
+            text = "p" 
+        intervals [30]:
+            xmin = 2.9966729525550417 
+            xmax = 3.0820936264492027 
+            text = "a" 
+        intervals [31]:
+            xmin = 3.0820936264492027 
+            xmax = 3.1460680733595128 
+            text = "g" 
+        intervals [32]:
+            xmin = 3.1460680733595128 
+            xmax = 3.356122901895231 
+            text = "^a:" 
+        intervals [33]:
+            xmin = 3.356122901895231 
+            xmax = 3.4008880670571622 
+            text = "v" 
+        intervals [34]:
+            xmin = 3.4008880670571622 
+            xmax = 3.5299590352879884 
+            text = "o:" 
+        intervals [35]:
+            xmin = 3.5299590352879884 
+            xmax = 3.729954648526077 
+            text = "..." 
+    item [3]:
+        class = "IntervalTier" 
+        name = "fvienetai" 
+        xmin = 0 
+        xmax = 3.729954648526077 
+        intervals: size = 31 
+        intervals [1]:
+            xmin = 0 
+            xmax = 0.20000000000000001 
+            text = "..." 
+        intervals [2]:
+            xmin = 0.20000000000000001 
+            xmax = 0.33264540652870983 
+            text = "lu" 
+        intervals [3]:
+            xmin = 0.33264540652870983 
+            xmax = 0.43015368707945167 
+            text = "b" 
+        intervals [4]:
+            xmin = 0.43015368707945167 
+            xmax = 0.51303572554758226 
+            text = """a" 
+        intervals [5]:
+            xmin = 0.51303572554758226 
+            xmax = 0.58654733825594529 
+            text = "s" 
+        intervals [6]:
+            xmin = 0.58654733825594529 
+            xmax = 0.74479198171981864 
+            text = "gi" 
+        intervals [7]:
+            xmin = 0.74479198171981864 
+            xmax = 0.80639948624960556 
+            text = "p" 
+        intervals [8]:
+            xmin = 0.80639948624960556 
+            xmax = 0.92304927278483018 
+            text = "s" 
+        intervals [9]:
+            xmin = 0.92304927278483018 
+            xmax = 0.97712204654478707 
+            text = """u" 
+        intervals [10]:
+            xmin = 0.97712204654478707 
+            xmax = 1.1161311727570094 
+            text = "p" 
+        intervals [11]:
+            xmin = 1.1161311727570094 
+            xmax = 1.2904306828140078 
+            text = "^uo" 
+        intervals [12]:
+            xmin = 1.2904306828140078 
+            xmax = 1.402565205447361 
+            text = "S'" 
+        intervals [13]:
+            xmin = 1.402565205447361 
+            xmax = 1.5440200928337271 
+            text = "e" 
+        intervals [14]:
+            xmin = 1.5440200928337271 
+            xmax = 1.944020092833727 
+            text = "..." 
+        intervals [15]:
+            xmin = 1.944020092833727 
+            xmax = 2.0686343953512143 
+            text = "g" 
+        intervals [16]:
+            xmin = 2.0686343953512143 
+            xmax = 2.134230874994441 
+            text = "r'" 
+        intervals [17]:
+            xmin = 2.134230874994441 
+            xmax = 2.264062981804321 
+            text = "^ei" 
+        intervals [18]:
+            xmin = 2.264062981804321 
+            xmax = 2.307498488595106 
+            text = "t" 
+        intervals [19]:
+            xmin = 2.307498488595106 
+            xmax = 2.3759051282109276 
+            text = "s" 
+        intervals [20]:
+            xmin = 2.3759051282109276 
+            xmax = 2.4437177051393979 
+            text = "m" 
+        intervals [21]:
+            xmin = 2.4437177051393979 
+            xmax = 2.5448810499111407 
+            text = "o:" 
+        intervals [22]:
+            xmin = 2.5448810499111407 
+            xmax = 2.6734146924553008 
+            text = "gi" 
+        intervals [23]:
+            xmin = 2.6734146924553008 
+            xmax = 2.7760847780617182 
+            text = "k" 
+        intervals [24]:
+            xmin = 2.7760847780617182 
+            xmax = 2.8350329658492122 
+            text = """u" 
+        intervals [25]:
+            xmin = 2.8350329658492122 
+            xmax = 2.896948574719056 
+            text = "s" 
+        intervals [26]:
+            xmin = 2.896948574719056 
+            xmax = 2.9966729525550417 
+            text = "p" 
+        intervals [27]:
+            xmin = 2.9966729525550417 
+            xmax = 3.0820936264492027 
+            text = "a" 
+        intervals [28]:
+            xmin = 3.0820936264492027 
+            xmax = 3.1460680733595128 
+            text = "g" 
+        intervals [29]:
+            xmin = 3.1460680733595128 
+            xmax = 3.356122901895231 
+            text = "^a:" 
+        intervals [30]:
+            xmin = 3.356122901895231 
+            xmax = 3.5299590352879884 
+            text = "vo:" 
+        intervals [31]:
+            xmin = 3.5299590352879884 
+            xmax = 3.729954648526077 
+            text = "..." 
+    item [4]:
+        class = "IntervalTier" 
+        name = "zodziai" 
+        xmin = 0 
+        xmax = 3.729954648526077 
+        intervals: size = 9 
+        intervals [1]:
+            xmin = 0 
+            xmax = 0.20000000000000001 
+            text = "..." 
+        intervals [2]:
+            xmin = 0.20000000000000001 
+            xmax = 0.58654733825594529 
+            text = "lub""as" 
+        intervals [3]:
+            xmin = 0.58654733825594529 
+            xmax = 0.97712204654478707 
+            text = "g'ips""u" 
+        intervals [4]:
+            xmin = 0.97712204654478707 
+            xmax = 1.5440200928337271 
+            text = "p^uoS'e" 
+        intervals [5]:
+            xmin = 1.5440200928337271 
+            xmax = 1.944020092833727 
+            text = "..." 
+        intervals [6]:
+            xmin = 1.944020092833727 
+            xmax = 2.307498488595106 
+            text = "gr'^eit" 
+        intervals [7]:
+            xmin = 2.307498488595106 
+            xmax = 2.896948574719056 
+            text = "smo:g'ik""us" 
+        intervals [8]:
+            xmin = 2.896948574719056 
+            xmax = 3.5299590352879884 
+            text = "pag^a:vo:" 
+        intervals [9]:
+            xmin = 3.5299590352879884 
+            xmax = 3.729954648526077 
+            text = "..." 
