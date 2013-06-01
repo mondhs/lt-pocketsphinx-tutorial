@@ -14,5 +14,5 @@ Since this is mainly targetted to Lithuanian developers, the rest of the documen
 Šis projektas sukurtas pagal https://github.com/alumae/et-pocketsphinx-tutorial
 
 Projekte aprašyti:
- # Sphinx modelio apmokymo procedūra: training/README.md
- # PocketSphinx relizacija su Lietuvišu modeliu impl/README.md
+*   Sphinx modelio apmokymo procedūra: training/README.md
+*   PocketSphinx relizacija su Lietuvišu modeliu impl/README.md
