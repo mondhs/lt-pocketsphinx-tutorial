@@ -24,17 +24,17 @@ Gramatika grįstas aptikimas
 
 ### JSGF
 
-Lengviausiai šnekos atpažinimui yra naudoti kalbos modelio gramatikos žinias. Tarkim norime komanduoti robotui, kuris gali važiuoti pirmyn, atgal sukti kairėn ir dešinėn. Tuomet reikia, kad robotas suprastu komandas " eik pirmyn", "eik penkis metrus atgal", "suk dešinėn" ir pan. Visų pirmiausiai, turime nusakyti komandų gramatiką(kokios žodžių struktūros komandos turėtų būti sakomos). PocketSphinx gramatiką saugo JSGF formatu. Aptartam pavyzdžiui gramatika atrodo taip:
+Lengviausiai šnekos atpažinimui yra naudoti kalbos modelio gramatikos žinias. Tarkim norime komanduoti robotui, kuris gali važiuoti pirmyn, atgal sukti kairėn ir dešinėn. Tuomet reikia, kad robotas suprastu komandas " varyk pirmyn", "varyk penkis metrus atgal", "suk dešinėn" ir pan. Visų pirmiausiai, turime nusakyti komandų gramatiką(kokios žodžių struktūros komandos turėtų būti sakomos). PocketSphinx gramatiką saugo JSGF formatu. Aptartam pavyzdžiui gramatika atrodo taip:
 
     #JSGF V1.0;
-
+    
     grammar robot;
+    
+    public <COMMAND> = <EIK> | <SUK>;
+    <EIK> = (EIK | VARYK ) [ ( VIENĄ | DU | TRIS | KETURIS | PENKIS ) METRUS ] (PIRMYN | ATGAL);
+    <SUK> = (SUK | GRĘŽKIS ) ( KAIRĖN | DEŠINĖN );
 
-    public <command> = <eik> | <suk>;
-    <eik> = (eik | varyk ) [ ( vieną | du | tris | keturis | penkis ) metrus ] (pirmyn | atgal);
-    <suk> = (suk | gręžkis ) ( kairėn | dešinėn );
-  
-Ši informacija turi būti saugoma `robot.jsgf` faile.
+Ši informacija turi būti saugoma `impl/models/lm/robot.jsgf` faile.
 
 ### Tarimų žodynas
 
@@ -42,7 +42,7 @@ Lengviausiai šnekos atpažinimui yra naudoti kalbos modelio gramatikos žinias.
 
 Pradžioje kuriant tarimų žodyną, sukurkite direktoriją `scripts` su dviems skriptais: `scripts/extract_jsgf_vocabulary.sh` išrenka JSGF bylas, scripts/est-l2p.py sugeneruoja žodžių tarimą. Norint sugeneruoti tarimų žodyną, kuris turi būti `models/lm/robot.jsgf` paleiskite scriptą:
 
-    ./scripts/extract_jsgf_vocabulary.sh models/lm/robot.jsgf | ./scripts/lt-l2p.py > robot.dict
+    ./scripts/extract_jsgf_vocabulary.sh models/lm/robot.jsgf | ./scripts/lt-l2p.py > models/dict/robot.dict
 
     
 Sugeneruota (`robot.dict`):
@@ -71,7 +71,7 @@ Lengviausias būdas išbandyti šnekos atpažintuvą pasinaudojant komanda `pock
 
     pocketsphinx_continuous -hmm models/hmm/lt.cd_cont_200 -jsgf models/lm/robot.jsgf -dict models/dict/robot.dict
     
-Ištarkite į mikrofoną `eik penkis metrus pirmyn`. Ekrane turi pasirodyti:
+Ištarkite į mikrofoną `sul dešinėn`. Ekrane turi pasirodyti:
 
     [..]
     INFO: fsg_search.c(1417): Start node <sil>.0:2:17
