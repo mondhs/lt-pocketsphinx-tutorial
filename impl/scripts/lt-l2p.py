@@ -18,7 +18,7 @@ import codecs
 
 l2p_rules = r"""
 
-CH    X
+ch    X
 
 ai    AI
 au    AU

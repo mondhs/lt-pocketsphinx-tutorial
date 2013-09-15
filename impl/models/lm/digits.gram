@@ -1,0 +1,6 @@
+#JSGF V1.0;
+
+grammar digits;
+
+
+public <numbers> = (NULIS | VIENAS | DU | TRYS | KETURI | PENKI | ŠEŠI | SEPTYNI | AŠTUONI | DEVYNI) * ;

@@ -1,0 +1,10 @@
+#JSGF V1.0;
+
+grammar calculator;
+
+
+<digit>= NULIS {this.$value="0"} | VIENAS {this.$value="1"} | DU {this.$value="2"} |
+TRYS {this.$value="3"}|KETURI {this.$value="4"}|PENKI {this.$value="5"} |ŠEŠI {this.$value="6"} |
+SEPTYNI {this.$value="7"} |AŠTUONI {this.$value="8"} |DEVYNI {this.$value="9"};
+public <calculator> = <digit> {this.number1=$}   <operator> {this.operator=$}  <digit>{this.number2=$} ;
+<operator> = (PLIUS {this.$value="1"}  | MINUS {this.$value="2"}  | KART {this.$value="3"} | (DALINTI [IŠ]) {this.$value="4"}) ;
