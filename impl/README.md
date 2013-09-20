@@ -28,24 +28,24 @@ Lengviausiai šnekos atpažinimui yra naudoti kalbos modelio gramatikos žinias.
 
     #JSGF V1.0;
     
-    grammar robot;
+    grammar robotas;
     
     public <COMMAND> = <EIK> | <SUK>;
     <EIK> = (EIK | VARYK ) [ ( VIENĄ | DU | TRIS | KETURIS | PENKIS ) METRUS ] (PIRMYN | ATGAL);
     <SUK> = (SUK | GRĘŽKIS ) ( KAIRĖN | DEŠINĖN );
 
-Ši informacija turi būti saugoma `impl/models/lm/robot.jsgf` faile.
+Ši informacija turi būti saugoma `impl/models/lm/robotas.gram` faile.
 
 ### Tarimų žodynas
 
 Šnekos atpažinimui yra reikalingas tarimų žodynas šnekai(taip kaip raidynas aprašyti tekstui), kad būtų galima užrašyti žodžių tarimą naudojantis fonemomis.
 
-Pradžioje kuriant tarimų žodyną, sukurkite direktoriją `scripts` su dviems skriptais: `scripts/extract_jsgf_vocabulary.sh` išrenka JSGF bylas, scripts/est-l2p.py sugeneruoja žodžių tarimą. Norint sugeneruoti tarimų žodyną, kuris turi būti `models/lm/robot.jsgf` paleiskite scriptą:
+Pradžioje kuriant tarimų žodyną, sukurkite direktoriją `scripts` su dviems skriptais: `scripts/extract_jsgf_vocabulary.sh` išrenka JSGF bylas, scripts/est-l2p.py sugeneruoja žodžių tarimą. Norint sugeneruoti tarimų žodyną, kuris turi būti `models/lm/robotas.gram` paleiskite scriptą:
 
-    ./scripts/extract_jsgf_vocabulary.sh models/lm/robot.jsgf | ./scripts/lt-l2p.py > models/dict/robot.dict
+    ./scripts/extract_jsgf_vocabulary.sh models/lm/robotas.gram | ./scripts/lt-l2p.py > models/dict/robotas.dict
 
     
-Sugeneruota (`robot.dict`):
+Sugeneruota (`robotas.dict`):
 
     ATGAL A T G A L
     DEŠINĖN D E SH IH N EH N
@@ -69,7 +69,7 @@ Nusikopijuokite rankomis apmokintą garsyno modelį [lt.cd_cont_200](../training
 
 Lengviausias būdas išbandyti šnekos atpažintuvą pasinaudojant komanda `pocketsphinx_continuous`. Paleiskite:
 
-    pocketsphinx_continuous -hmm models/hmm/lt.cd_cont_200 -jsgf models/lm/robot.jsgf -dict models/dict/robot.dict
+    pocketsphinx_continuous -hmm models/hmm/lt.cd_cont_200 -jsgf models/lm/robotas.gram -dict models/dict/robotas.dict
     
 Ištarkite į mikrofoną `sul dešinėn`. Ekrane turi pasirodyti:
 

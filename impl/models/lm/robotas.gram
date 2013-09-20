@@ -1,6 +1,6 @@
 #JSGF V1.0;
 
-grammar robot;
+grammar robotas;
 
 public <COMMAND> = <EIK> | <SUK>;
 <EIK> = (EIK | VARYK ) [ ( VIENĄ | DU | TRIS | KETURIS | PENKIS ) METRUS ] (PIRMYN | ATGAL);
