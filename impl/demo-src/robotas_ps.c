@@ -1,4 +1,5 @@
-#include <pocketsphinx.h>
+#include <pocketsphinx.h>	
+#define MAXLEN 256
 
 int
 main(int argc, char *argv[])
@@ -19,6 +20,7 @@ main(int argc, char *argv[])
 			     "-hmm",  "../models/hmm/lt.cd_cont_200/",
 			     "-jsgf",  "../models/lm/robotas.gram",
 			     "-dict",  "../models/dict/robotas.dict",
+			     "-logfn", "/dev/null",
 			     NULL);
 	if (config == NULL){
 		return 1;

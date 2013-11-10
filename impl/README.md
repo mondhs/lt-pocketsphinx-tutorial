@@ -96,11 +96,11 @@ Paleiskite (kataloge `test`):
 
     pocketsphinx_batch pocketsphinx.conf
 
-Atpažintos komandos bus įrašytos `test.hyp`:
-    
-    VARYK PIRMYN (test1 -4927)
-    VARYK PENKIS METRUS ATGAL (test2 -7555)
-    SUK DEŠINĖN (test3 -3853)
+Atpažintos komandos bus įrašytos `target/rezultatai.hyp`:
+
+    VARYK PENKIS METRUS ATGAL (eik_5m_atgal-16k -7555)
+    SUK DEŠINĖN (suk_deshinen-16k -3853)
+    VARYK PIRMYN (varyk_pirmyn-16k -4927)
 
 Kiekvienoje eilutėje yra komanda ir skliausteliuose nurodomas failo vardas ir atpažinimo taškai.
 
