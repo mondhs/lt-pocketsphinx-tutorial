@@ -32,9 +32,9 @@ main(int argc, char *argv[])
 
 	//Failo atidarymas skaitymui
 	/////////////////////////////
-	fh = fopen("../test/audio/test1.wav", "rb");
+	fh = fopen("../test/audio/varyk_pirmyn-16k.wav", "rb");
 	if (fh == NULL) {
-		perror("Failed to open test1.wav");
+		perror("Failed to open varyk_pirmyn-16k.wav");
 		return 1;
 	}
 
