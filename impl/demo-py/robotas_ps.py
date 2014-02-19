@@ -22,7 +22,7 @@ decoder.decode_raw(open(path.join(MODELDIR, '../test/audio/varyk_pirmyn-16k.wav'
 
 # Retrieve hypothesis.
 hypothesis = decoder.hyp()
-print 'Best hypothesis: ', hypothesis.best_score, hypothesis.hypstr
-print 'Best hypothesis segments: ', [seg.word for seg in decoder.seg()]
+print ('Best hypothesis: ', hypothesis.best_score, hypothesis.hypstr)
+print ('Best hypothesis segments: ', [seg.word for seg in decoder.seg()])
 
 
