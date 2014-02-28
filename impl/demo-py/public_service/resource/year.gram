@@ -1,0 +1,12 @@
+#JSGF V1.0;
+
+grammar year;
+
+<number_set> = NULIS{0} | VIENAS{1} | DU{2} |
+	 TRYS{3} | KETURI{4} | PENKI{5} |
+	  ŠEŠI{6} | SEPTYNI{7} | AŠTUONI{8} |
+	  DEVYNI{9} ;
+
+
+public <number_sequence> = (VIENAS{1} DEVYNI{9}| DU{2} NULIS{0}) <number_set> <number_set>;
+

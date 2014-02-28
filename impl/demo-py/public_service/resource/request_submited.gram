@@ -1,0 +1,7 @@
+#JSGF V1.0;
+
+grammar request_submited;
+
+
+public <thanks_and_goodbye> = DĖKUI|AČIŪ|VISO GERO;
+

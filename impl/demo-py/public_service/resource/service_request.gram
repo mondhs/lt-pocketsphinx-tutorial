@@ -1,0 +1,9 @@
+#JSGF V1.0;
+
+grammar service_request;
+
+
+public <service_request> = <mokesciu_ataskaita>|<mokestis_uz_turta>;
+
+<mokesciu_ataskaita> = MOKESČIŲ ATASKAITA{mokesciu_ataskaita}|PAŽYMA APIE SUMOKĖTUS MOKESČIUS{mokesciu_ataskaita};
+<mokestis_uz_turta> = KIEK MOKĖTI UŽ TURTĄ{<mokestis_uz_turta>};

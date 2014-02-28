@@ -1,0 +1,24 @@
+#!/bin/sh
+
+#FILES="*.png"
+#for f in "$FILES"
+#do
+  # sam2p $f EPS: Screenshot-1.eps
+#  echo "Processing $f file..."
+  # take action on each file. $f store current file name
+  #echo  $EPS_NAME
+#done
+
+count=0	
+set epsname = ''
+#for aFile in *png; do
+#for aFile in `ls -1 | grep png|sed 's/\(.*\).png/\1/'` do
+for aFile in `ls | grep gram |sed 's/\(.*\).gram/\1/'` 
+do
+  gramFile=`echo $aFile.gram`
+  fsgFile=`echo $aFile.fsg`
+  sam2p $pngFile EPS: $epsFile
+  sphinx_jsgf2fsg -compile yes  -jsgf $gramFile > $fsgFile
+  echo "$gramFile :fsg $fsgFile"
+done
+
