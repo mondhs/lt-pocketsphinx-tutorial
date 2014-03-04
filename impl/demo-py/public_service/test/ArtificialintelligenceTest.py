@@ -16,10 +16,8 @@ class ArtificialintelligenceTest(unittest.TestCase):
         self.ai = Artificialintelligence();
         pass
 
-
     def tearDown(self):
         pass
-
 
     def testTransformNumbers(self):
         response = self.ai.transformNumbers("VIENAS DU TRYS KETURI PENKI ŠEŠI SEPTYNI AŠTUONI DEVYNI NULIS")
@@ -28,22 +26,28 @@ class ArtificialintelligenceTest(unittest.TestCase):
 
     def testSaidHapyPath(self):
         aiContext = self.ai.createContext()
-        aiContext = self.ai.said("LABAS",aiContext)
-        self.assertEqual(u"Pasakykite kodą iš 3 pavienių skaičių",aiContext.response);
+        aiContext = self.ai.said(None,aiContext)
+        self.assertEqual(u"Sveiki. Mano vardas Liepa. Prašau prisistatykite.",aiContext.response);
+        aiContext = self.ai.said(None,aiContext)
+        self.assertEqual(u"Pasakykite kodą iš trijų pavienių skaičių.",aiContext.response);
         aiContext = self.ai.said("VIENAS DU TRYS",aiContext)
-        self.assertEqual(u"Ar Jūs sakėte 123. Sakykite tesingai arba klaidingai",aiContext.response);
+        self.assertEqual(u"Ar Jūs sakėte 123. Sakykite tesingai arba klaidingai.",aiContext.response);
         aiContext = self.ai.said("TEISINGAI",aiContext)
-        self.assertEqual(u"Pasakykite gimimo metus iš 4 pavienių skaičių",aiContext.response);
+        self.assertEqual(u"Pasakykite gimimo metus iš keturių pavienių skaičių.",aiContext.response);
         aiContext = self.ai.said("VIENAS DEVYNI NULIS VIENAS",aiContext)
-        self.assertEqual(u"Ar Jūs sakėte 1901. Sakykite tesingai arba klaidingai",aiContext.response);
+        self.assertEqual(u"Ar Jūs sakėte 1901. Sakykite tesingai arba klaidingai.",aiContext.response);
         aiContext = self.ai.said("TEISINGAI",aiContext)
-        self.assertEqual(u"Pasakykite kokios paslaugos ieškote",aiContext.response);
+        self.assertEqual(u"Pasakykite kokios paslaugos ieškote.",aiContext.response);
         aiContext = self.ai.said("KIEK MOKĖTI UŽ TURTĄ",aiContext)
-        self.assertEqual(u"Ar Jūs sakėte. KIEK MOKĖTI UŽ TURTĄ? tesingai ar klaidingai",aiContext.response);
+        self.assertEqual(u"Ar Jūs sakėte. KIEK MOKĖTI UŽ TURTĄ? tesingai ar klaidingai.",aiContext.response);
         aiContext = self.ai.said("TEISINGAI",aiContext)
         self.assertEqual(u"Greitu laiku Jums bus išsiųsta infomacija.",aiContext.response);
         aiContext = self.ai.said("DĖKUI",aiContext)
         self.assertEqual(u"Viso gero.",aiContext.response);
+        aiContext = self.ai.said(None,aiContext)
+        self.assertEqual(u"Sveiki. Mano vardas Liepa. Prašau prisistatykite.",aiContext.response);
+        aiContext = self.ai.said(None,aiContext)
+        self.assertEqual(u"Pasakykite kodą iš trijų pavienių skaičių.",aiContext.response);
         pass
 
     def testCodeMissunderstood(self):

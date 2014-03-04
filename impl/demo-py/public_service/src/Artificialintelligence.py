@@ -7,6 +7,7 @@ Created on Feb 27, 2014
 @author: as
 '''
 import logging as logging
+import time
 import re
 
 
@@ -42,6 +43,8 @@ class Artificialintelligence(object):
     def createContext(self):
         aiContext = AiContext();
         aiContext.state = aiContext.STATE_INIT
+        aiContext.interactiveStep = False
+        aiContext.stateStarted = time.time()
         aiContext.response = AiContext.MSG[aiContext.state]
         return aiContext;
 
@@ -51,47 +54,59 @@ class Artificialintelligence(object):
         except AttributeError:
             return a == b
 
+    def updateState(self, aiContext, state):
+        aiContext.stateStarted = time.time()
+        aiContext.state = state
+        return aiContext
+
     def said(self, said, aiContext):
         logging.info("said %s", said)
         said = self.transformNumbers(said)
+        aiContext.interactiveStep = True
         if(aiContext.state == aiContext.STATE_INIT):
-            aiContext.state = aiContext.STATE_ASK_CODE
+            self.updateState(aiContext, aiContext.STATE_HI);
+            aiContext.response = AiContext.MSG[aiContext.state]
+            aiContext.interactiveStep = False
+        elif(aiContext.state == aiContext.STATE_HI):
+            self.updateState(aiContext, aiContext.STATE_ASK_CODE)
             aiContext.response = AiContext.MSG[aiContext.state]
         elif(aiContext.state == aiContext.STATE_ASK_CODE):
-            aiContext.state = aiContext.STATE_VERIFY_CODE
+            self.updateState(aiContext, aiContext.STATE_VERIFY_CODE)
             aiContext.response = AiContext.MSG[aiContext.state].format(said);
         elif(aiContext.state == aiContext.STATE_VERIFY_CODE):
             if(self.eq(said, "teisingai")):
-                aiContext.state = aiContext.STATE_ASK_YEAR
+                self.updateState(aiContext, aiContext.STATE_ASK_YEAR)
                 aiContext.response = AiContext.MSG[aiContext.state]
             elif(self.eq(said, "klaidingai")):
-                aiContext.state = aiContext.STATE_ASK_CODE
+                self.updateState(aiContext, aiContext.STATE_ASK_CODE)
                 aiContext.response = AiContext.MSG[aiContext.state]
         elif(aiContext.state == aiContext.STATE_ASK_YEAR):
-                aiContext.state = aiContext.STATE_VERIFY_YEAR
+                self.updateState(aiContext, aiContext.STATE_VERIFY_YEAR)
                 aiContext.response = AiContext.MSG[aiContext.state].format(said);
         elif(aiContext.state == aiContext.STATE_VERIFY_YEAR):
             if(self.eq(said, "teisingai")):
-                aiContext.state = aiContext.STATE_ASK_WHAT_SERVICE
+                self.updateState(aiContext, aiContext.STATE_ASK_WHAT_SERVICE)
                 aiContext.response = AiContext.MSG[aiContext.state]
             elif(self.eq(said, "klaidingai")):
-                aiContext.state = aiContext.STATE_ASK_YEAR
+                self.updateState(aiContext, aiContext.STATE_ASK_YEAR)
                 aiContext.response = AiContext.MSG[aiContext.state]
         elif(aiContext.state == aiContext.STATE_ASK_WHAT_SERVICE):
-                aiContext.state = aiContext.STATE_VERIFY_WHAT_SERVICE
+                self.updateState(aiContext, aiContext.STATE_VERIFY_WHAT_SERVICE)
                 aiContext.response = AiContext.MSG[aiContext.state].format(said);
         elif(aiContext.state == aiContext.STATE_VERIFY_WHAT_SERVICE):
             if(self.eq(said, "teisingai")):
-                aiContext.state = aiContext.STATE_NOTIFY_SERVICE_ORDERED
+                self.updateState(aiContext, aiContext.STATE_NOTIFY_SERVICE_ORDERED)
                 aiContext.response = AiContext.MSG[aiContext.state]
             elif(self.eq(said, "klaidingai")):
-                aiContext.state = aiContext.STATE_ASK_WHAT_SERVICE
+                self.updateState(aiContext, aiContext.STATE_ASK_WHAT_SERVICE)
                 aiContext.response = AiContext.MSG[aiContext.state]
         elif(aiContext.state == aiContext.STATE_NOTIFY_SERVICE_ORDERED):
-            aiContext.state = aiContext.STATE_THANKS
+            self.updateState(aiContext, aiContext.STATE_THANKS)
+            aiContext.interactiveStep = False
             aiContext.response = AiContext.MSG[aiContext.state]
         elif(aiContext.state == aiContext.STATE_THANKS):
-            aiContext.state = aiContext.STATE_FINISH
+            aiContext.interactiveStep = False
+            self.updateState(aiContext, aiContext.STATE_HI)
             aiContext.response = AiContext.MSG[aiContext.state]
 
 
@@ -99,7 +114,8 @@ class Artificialintelligence(object):
         return aiContext
 
 class AiContext(object):
-    STATE_INIT = -1
+    STATE_INIT = -2
+    STATE_HI = -1
     STATE_ASK_CODE = 0
     STATE_VERIFY_CODE = 1
     STATE_ASK_YEAR = 2
@@ -122,19 +138,22 @@ class AiContext(object):
             }
 
     MSG = {
-           STATE_INIT: u"Labas",
-           STATE_ASK_CODE:u"Pasakykite kodą iš 3 pavienių skaičių",
-           STATE_VERIFY_CODE:u"Ar Jūs sakėte {0}. Sakykite tesingai arba klaidingai",
-           STATE_ASK_YEAR: "Pasakykite gimimo metus iš 4 pavienių skaičių",
-           STATE_VERIFY_YEAR:u"Ar Jūs sakėte {0}. Sakykite tesingai arba klaidingai",
-           STATE_ASK_WHAT_SERVICE:u"Pasakykite kokios paslaugos ieškote",
-           STATE_VERIFY_WHAT_SERVICE:u"Ar Jūs sakėte. {0}? tesingai ar klaidingai",
+           STATE_INIT: None,
+           STATE_HI: u"Sveiki. Mano vardas Liepa. Prašau prisistatykite.",
+           STATE_ASK_CODE:u"Pasakykite kodą iš trijų pavienių skaičių.",
+           STATE_VERIFY_CODE:u"Ar Jūs sakėte {0}. Sakykite tesingai arba klaidingai.",
+           STATE_ASK_YEAR: "Pasakykite gimimo metus iš keturių pavienių skaičių.",
+           STATE_VERIFY_YEAR:u"Ar Jūs sakėte {0}. Sakykite tesingai arba klaidingai.",
+           STATE_ASK_WHAT_SERVICE:u"Pasakykite kokios paslaugos ieškote.",
+           STATE_VERIFY_WHAT_SERVICE:u"Ar Jūs sakėte. {0}? tesingai ar klaidingai.",
            STATE_NOTIFY_SERVICE_ORDERED: u"Greitu laiku Jums bus išsiųsta infomacija.",
            STATE_THANKS: u"Viso gero.",
            STATE_FINISH: None
     }
 
     state = None
+    stateStarted = None
+    interactiveStep = None
     response = None
 
     def __init__(self):

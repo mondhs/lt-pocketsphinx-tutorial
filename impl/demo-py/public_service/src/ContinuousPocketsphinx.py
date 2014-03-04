@@ -62,7 +62,8 @@ class ContinuousPocketsphinx(object):
         '''
         print ("[updateGrammar]+++" + pGramma)
         logmath = pDecoder.get_logmath();
-        fsg = pDecoder.readfile(os.path.join("../resource/", pGramma+'.fsg'), logmath)
+        fsg = sphinxbase.FsgModel(os.path.join("../resource/", pGramma+'.fsg'), logmath, 7.5)
+        #pDecoder.readfile(os.path.join("../resource/", pGramma+'.fsg'), logmath)
         pDecoder.set_fsg("default",fsg);
         pDecoder.set_search("default");
         print ("[updateGrammar]---")
@@ -79,14 +80,23 @@ class ContinuousPocketsphinx(object):
         return config;
 
     def speak(self,text):
-
         print("Speak: ", text)
         if text is not None:
             aProcess = subprocess.Popen(['/home/as/bin/tark-win-lt', text], stderr=subprocess.STDOUT)
             out = aProcess.communicate()[0];
+            time.sleep (0.100)
         print("ended Speak: ", out)
-        time.sleep (0.100)
 
+
+    def said(self, aiContext, text):
+        print ("[said]+++", text)
+        aiContext = self.ai.said(text, aiContext)
+        print ('AI response: ',  aiContext.state, aiContext.response)
+        self.speak(aiContext.response)
+        if aiContext.interactiveStep is False :
+            self.said(aiContext, text);
+        print ("[said]---")
+        return aiContext
 
     def recognized(self, pStream, pDecoder, aiContext):
         print ("[recognized]+++")
@@ -96,15 +106,16 @@ class ContinuousPocketsphinx(object):
         hypothesis = pDecoder.hyp()
         if hypothesis is not None:
             print ('Best hypothesis: ', hypothesis.uttid, hypothesis.best_score, hypothesis.hypstr)
-            #self.speak(hypothesis.hypstr);
-            aiContext = self.ai.said(hypothesis.hypstr, aiContext)
-            self.speak(aiContext.response);
-            print ('AI response: ',  aiContext.state, aiContext.response)
+            self.said(aiContext, hypothesis.hypstr)
             if aiContext.state in aiContext.GRAM:
                 self.updateGrammar(pDecoder, aiContext.GRAM[aiContext.state]);
+        elif (time.time() - aiContext.stateStarted) > 10:
+            self.speak(aiContext.response)
+            aiContext.stateStarted = time.time()
+        print ("Time: ", (time.time() - aiContext.stateStarted))
 
         print("AI response ", aiContext.response)
-        time.sleep (0.500)
+        time.sleep (0.100)
         #Indicate listening for next utterance
         pStream.start_stream()
         pDecoder.start_utt(None)
@@ -120,8 +131,7 @@ class ContinuousPocketsphinx(object):
         self.decoder.start_utt(None)
         cur_vad_state = 0
         aiContext = self.ai.createContext();
-        self.ai.said(None, aiContext)
-        self.speak(aiContext.response)
+        self.said(aiContext, None);
         while True:
             data = self.stream.read(self.CHUNK)
             time.sleep (0.100)
