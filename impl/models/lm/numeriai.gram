@@ -3,4 +3,4 @@
 grammar digits;
 
 
-public <numbers> = (NULIS | VIENAS | DU | TRYS | KETURI | PENKI | ŠEŠI | SEPTYNI | AŠTUONI | DEVYNI) * ;
+public <numbers> = (NULIS{0} | VIENAS{1} | DU{2} | TRYS{3} | KETURI{4} | PENKI{5} | ŠEŠI{6} | SEPTYNI{7} | AŠTUONI{8} | DEVYNI{9}) * ;
