@@ -1,0 +1,9 @@
+#JSGF V1.0;
+
+grammar asistentas;
+
+public <COMMAND> = <NAUJIENOS> | <SPORTAS> | <ORAS>;
+<NAUJIENOS> = PESKAITYK NAUJIENAS;
+<SPORTAS> = KAS ĮDOMAUS SPORTE;
+<ORAS> = KOKS ORAS;
+
