@@ -1,6 +1,7 @@
-Sphinx mokymo procedūros aprašai
+Sphinx mokymo procedūros aprašai(Pirma fazė)
 =================================
 
+Kitas akustinio modelio mokymo variantas yra aprašytas:  [Sphinx mokymo procedūros aprašai(Antra Fazė)](lt-faze2) puslapyje.
 
 Teisės
 --------
@@ -87,5 +88,7 @@ Kas toliau?
 ### Sphinx Naudojimas
 
 Žiūrėkite daugiau informacijos direktorijoje [impl](../impl).
+
+        
 
 

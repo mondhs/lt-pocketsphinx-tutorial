@@ -85,6 +85,9 @@ Ištarkite į mikrofoną `sul dešinėn`. Ekrane turi pasirodyti:
     READY....
 
 
+### Raktinės frazės paieška
+
+    pocketsphinx_kws -hmm models/hmm/lt.cd_cont_200 -dict models/dict/robotas.dict -kws "Gerai berže"
 
 ### Atpažintuvo patikrinimas
 
