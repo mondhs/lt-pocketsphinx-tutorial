@@ -1,0 +1,7 @@
+#JSGF V1.0;
+
+grammar robotas;
+
+public <COMMAND> = <EIK> | <SUK>;
+<EIK> = (EIK | VARYK ) [ ( VIENĄ | DU | TRIS | KETURIS | PENKIS ) METRUS ] (PIRMYN | ATGAL);
+<SUK> = (SUK | GRĘŽKIS ) ( KAIRĖN | DEŠINĖN );

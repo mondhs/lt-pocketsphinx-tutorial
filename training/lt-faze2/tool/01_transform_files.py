@@ -13,8 +13,7 @@ logging.basicConfig(filename='/tmp/liepa/transform_files.log',level=logging.DEBU
 
 # coruptedFileSet = set(line.strip() for line in open('corupted_files.txt'))
 
-#src_dir = "../wav22"
-src_dir = "/home/mgreibus/tmp/3etapas_Garsynas"
+src_dir = "../wav22"
 dest_dir = "../wav"
 fileFromatRegeExp = re.compile('([\w\d]+)_(\d+_[\d\w]+)')
 for speak_dir in os.listdir(src_dir):
