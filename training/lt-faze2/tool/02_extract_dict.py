@@ -10,7 +10,7 @@ import logging
 
 
 
-logging.basicConfig(filename='/tmp/liepa/extract_dict.log',level=logging.DEBUG)
+#logging.basicConfig(filename='/tmp/liepa/extract_dict.log',level=logging.DEBUG)
 
 
 def checkSpelling(text):
