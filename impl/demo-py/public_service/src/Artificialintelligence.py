@@ -15,6 +15,21 @@ class Artificialintelligence(object):
     '''
     classdocs
     '''
+    wordToNumberMap = {
+             #special symbols
+        u"VIENAS" : "1",
+        u"DU" : "2",
+        u"TRYS" : "3",
+        u"KETURI" : "4",
+        u"PENKI" : "5",
+        u"ŠEŠI" : "6",
+        u"SEPTYNI" : "7",
+        u"AŠTUONI" : "8",
+        u"DEVYNI" : "9",
+        u"NULIS" : "0"
+    }
+
+
 
     def __init__(self):
         '''
@@ -23,21 +38,22 @@ class Artificialintelligence(object):
         logging.basicConfig(format='%(asctime)s %(message)s', level=logging.INFO)
         logging.info("AI initialised")
 
+    def multiple_replace(self,  text):
+        dict = self.wordToNumberMap
+        # Create a regular expression  from the dictionary keys
+        regex = re.compile("(%s)" % "|".join(map(re.escape, dict.keys())))
+
+        # For each match, look-up corresponding value in dictionary
+        return regex.sub(lambda mo:dict[mo.string[mo.start():mo.end()]] + " ", text)
+
+
     def transformNumbers(self, stringWitNumbers):
         logging.info("transformNumbers %s", stringWitNumbers)
         if stringWitNumbers is None:
             return stringWitNumbers
         response = stringWitNumbers
-        response = re.sub(r'VIENAS\s*', "1", response)
-        response = re.sub(r'DU\s*', "2", response)
-        response = re.sub(r'TRYS\s*', "3", response)
-        response = re.sub(r'KETURI\s*', "4", response)
-        response = re.sub(r'PENKI\s*', "5", response)
-        response = re.sub(r'ŠEŠI\s*', "6", response)
-        response = re.sub(r'SEPTYNI\s*', "7", response)
-        response = re.sub(r'AŠTUONI\s*', "8", response)
-        response = re.sub(r'DEVYNI\s*', "9", response)
-        response = re.sub(r'NULIS\s*', "0", response)
+        response = self.multiple_replace(response)
+        response = re.sub(r'(\d)\s+',r'\g<1>', response)
         return response
 
     def createContext(self):

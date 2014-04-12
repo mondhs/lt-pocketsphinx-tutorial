@@ -1,7 +1,7 @@
 '''
 Created on Feb 23, 2014
 
-@author: as
+@author: mindaugas greibus
 '''
 
 from pocketsphinx import Decoder
@@ -22,7 +22,7 @@ class ContinuousPocketsphinx(object):
     CHANNELS = 1
     RATE = 16000
     #MODELDIR = "../models"
-    MODELDIR = "/home/as/src/speech/sphinx/lt-pocketsphinx-tutorial/impl/models"
+    MODELDIR = "/home/mgreibus/src/speech/sphinx/lt-pocketsphinx-tutorial/impl/models"
 
     decoder = None
     stream = None
@@ -72,7 +72,7 @@ class ContinuousPocketsphinx(object):
     def createConfig(self,pGramma):
         print ("[createConfig]+++")
         config = Decoder.default_config()
-        config.set_string('-hmm', os.path.join(self.MODELDIR, 'hmm/lt.cd_cont_200/'))
+        config.set_string('-hmm', os.path.join(self.MODELDIR, 'hmm/liepa.cd_semi_200/'))
         config.set_string('-fsg', os.path.join("../resource/", pGramma+'.fsg'))
         #config.set_string('-jsgf', os.path.join("../resource/", pGramma+'.gram'))
         config.set_string('-dict', os.path.join("../resource/", 'service.dict'))
@@ -82,7 +82,7 @@ class ContinuousPocketsphinx(object):
     def speak(self,text):
         print("Speak: ", text)
         if text is not None:
-            aProcess = subprocess.Popen(['/home/as/bin/tark-win-lt', text], stderr=subprocess.STDOUT)
+            aProcess = subprocess.Popen(['/home/mgreibus/bin/tark-win-lt', text], stderr=subprocess.STDOUT)
             out = aProcess.communicate()[0];
             time.sleep (0.100)
         print("ended Speak: ", out)
@@ -106,7 +106,7 @@ class ContinuousPocketsphinx(object):
         hypothesis = pDecoder.hyp()
         if hypothesis is not None:
             print ('Best hypothesis: ', hypothesis.uttid, hypothesis.best_score, hypothesis.hypstr)
-            self.said(aiContext, hypothesis.hypstr)
+            self.said(aiContext, hypothesis.hypstr.decode('utf-8'))
             if aiContext.state in aiContext.GRAM:
                 self.updateGrammar(pDecoder, aiContext.GRAM[aiContext.state]);
         elif (time.time() - aiContext.stateStarted) > 10:
