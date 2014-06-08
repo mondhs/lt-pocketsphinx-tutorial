@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="lt">
+        <head>
+                <title>Sphinx-LT (Sphinx su lietuvių akustiniu modeliu)</title>
+                <meta charset="utf-8">
+                <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+
+                <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+                <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+                
+                <!-- Latest compiled and minified CSS -->
+                <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+                <!-- Optional theme -->
+                <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+
+                <!-- Latest compiled and minified JavaScript -->
+                <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+
+                <!-- Custom styles for this template -->
+                <link href="sphinx-web.css" rel="stylesheet">
+
+        </head>
+        <body>
+
+		<div class="container">
+		         <form class="form-signin" role="form">
+
+			<div class="panel panel-default" id="recognitionConrtols">
+				<div class="panel-heading">
+					Atpažintuvas
+					<button id="helpBtn" type="button" class="btn btn-default btn-sm">
+                                                <span class="glyphicon glyphicon-question-sign"></span> Pagalba
+                                        </button>
+
+					</span>
+				</div>
+				<div class="panel-body">
+					<div id="holdAndSay" class="btn btn-lg btn-primary btn-block">
+						<span class="glyphicon glyphicon-record"></span> Nuspausk ir Sakyk</strong>
+					</div>
+					<span class="label label-info" id="recognzerStatusContainer">Būsena: <span id="recognzerStatus">Šyla</span></span> 
+				         
+
+				</div>
+			</div>
+			<div class="panel panel-default" id="recognitionResults">
+				<div class="panel-heading">Atpažinimo istorija</div>
+				
+                                 <span class="label label-success" id="recognitionResultContainer">Atpažinta: <span id="recognitionResult">-</span></span>
+
+				<div id="recognitionResults">
+					<ul id="recognitionResultsList"></ul>
+				</div>
+			</div><!--recognitionResults-->
+			 </form>
+                         <iframe width="560" height="315" src="//www.youtube.com/embed/MeeE65DIW1Q" frameborder="0" allowfullscreen></iframe>
+                        <div id="recognizerMessages"></div>
+
+		</div> <!-- /container -->
+
+
+
+
+
+
+
+<script src="./js/AudioContext-MonkeyPatch/AudioContextMonkeyPatch.js"></script>
+<script src="./js/recorder/recorder.js"></script>
+<script src="./js/recorder/recognitionManager.js"></script>
+<script>
+	
+		$(function() {
+			 $("#holdAndSay").hide();
+        		 $( "#dialog" ).dialog({
+                                autoOpen: false,
+                                position: { my: "right center", at: "right center", of: window },
+                                show: {
+                                        effect: "blind",
+                                        duration: 100
+                                },
+                                hide: {
+                                        effect: "blind",
+                                        duration: 100
+                                }
+                        });
+        		$( "#helpBtn" ) .click(function() {
+                		$( "#dialog" ).dialog("open");
+        		});
+			var recognitionManager = new RecognitionManager();
+			var recogniserServerUrl = 
+				//"http://localhost:8080/api/recognize";
+				"./recognize";
+			recognitionManager.setRecognitionUrl(recogniserServerUrl);
+			
+			recognitionManager
+					.changeCallbacks({
+						"onError" : function(msg) {
+							console.log("Error " + msg);
+							addMessages("Klaida: " + msg);
+						},
+						"onPrepared" : function() {
+							console.log("Prepared");
+							$("#holdAndSay").show();
+							addMessages("Užsikūrė. Pasiruošęs klausyti");
+						},
+						"onStartRecording" : function() {
+							console.log("Start recording");
+							addMessages("Pradėtas klausymas");
+						},
+						"onStopRecording" : function() {
+							console.log("Strop recording");
+							addMessages("Nutrauktas klausymas");
+						},
+						"onSendForRecognition" : function() {
+							console.log("Send for recognition");
+							addMessages("Siunčiama atpažinimui");
+						},
+						"onRecognitionResults" : function(data) {
+							console.log("Recognition result");
+							addMessages(" Pasiruošęs klausyti. ");
+							$("#recognitionResult").text(data.result);
+							$('#recognitionResultsList').prepend(
+                                                                        '<li>'+ data.result + '</li>');
+
+						}
+					});
+			///////////////////////////////////////////
+			////init
+			recognitionManager.prepareRecording();
+			///////////////////////////////////////////
+
+			//handle events
+
+			$("#holdAndSay").mousedown(function() {
+				console.log("mousedown");
+				recognitionManager.startRecording();
+			}).mouseup(function() {
+				console.log("mouseup");
+				recognitionManager.stopRecording();
+			});
+
+			function addMessages(msg) {
+				$("#recognzerStatus").text(msg);
+				/*$("<code>" + msg + "</code>")
+						.appendTo(
+								$('#recognizerMessages')
+										.children("span.js_msg").remove().end())
+						.each(function() {
+							var self = $(this);
+							setTimeout(function() {
+								self.fadeOut(500, function() {
+									self.remove();
+								});
+							}, 3000);
+						});*/
+			}
+		});
+</script>
+
+
+<div id="dialog" title="Naudojimas">
+<p>
+Nuspausk ir laikyk mėlyną klavišą. Iš tark vieną iš komandų. Atleisk kalvišą. Palau ~5s kol atpažintuvas atpažins.
+<ul>
+<li>važiuok aukščiau</li>
+<li>važiuok žemiau</li>
+<li>važiuok į pradžią</li>
+<li>važiuok į galą</li>
+<li>sekantis laukas</li>
+<li>atverk kortelę</li>
+<li>užverk kortelę</li>
+<li>praeita kortelė</li>
+<li>tolimesnė kortelė</li>
+<li>pirma kortelė</li>
+<li>užverk visas korteles</li>
+<li>atverk nuorodą naujame lange</li>
+<li>atverk nuorodą naujoje kortelėje</li>
+<li>atverk naują langą</li>
+<li>užverk naują langą</li>
+<li>atverk ieškos puslapį</li>
+<li>perkrauk tinklapį</li>
+<li>stabdyk krovimą</li>
+<li>aktyvink adreso juostą</li>
+<li>rodyk visame ekrane</li>
+<li>rodyk įprastą ekraną</li>
+<li>rodyk spausdinimo ekraną</li>
+<li>spausdink tinklapį</li>
+<li>rodyk orus</li>
+<li>rodyk naujienas</li>
+<li>rodyk sportą</li>
+<li>rodyk draugus</li>
+<li>rodyk paštą naršyklėje</li>
+<li>rodyk filmus</li>
+<li>rodyk muziką</li>
+</p>
+</ul>
+
+</div>
+        </body>
+</html>
+

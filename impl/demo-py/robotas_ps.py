@@ -1,18 +1,16 @@
 '''
 Created on Dec 29, 2013
 
+
 @author: Mindaugas Greibus
 '''
 import sys, os
 
-#sys.path.insert(0, '/home/mondhs/tmp/pocketsphinx-bin/usr/local/lib/python2.7/dist-packages/sphinxbase')
-#sys.path.insert(0, '/home/mondhs/tmp/pocketsphinx-bin/usr/local/lib/python2.7/dist-packages/pocketsphinx')
 
 
 from pocketsphinx import Decoder
 
 MODELDIR = "../models"
-#MODELDIR = "/home/as/src/speech/sphinx/lt-pocketsphinx-tutorial/impl/models"
 
 # Create a decoder with certain model
 config = Decoder.default_config()

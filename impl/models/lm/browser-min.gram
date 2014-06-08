@@ -1,0 +1,37 @@
+
+#JSGF V1.0;
+
+grammar browser-min;
+
+public <COMMAND> = <cmd-move-up>|<cmd-move-down>|<cmd-move-begining>|<cmd-move-end>|<cmd-move-next-item>|<cmd-tab-new>|<cmd-tab-close>|<cmd-tab-prev>|<cmd-tab-next>|<cmd-tab-first>|<cmd-tab-close-all>|<cmd-link-open-in-new-window>|<cmd-link-open-in-this-tab>|<cmd-window-new>|<cmd-window-close>|<cmd-searchpage>|<cmd-page-reload>|<cmd-page-stop>|<cmd-location-bar>|<cmd-full-screen-on>|<cmd-full-regular>|<cmd-print-preview>|<cmd-print>|<cmd-wheatherpage>|<cmd-newspage>|<cmd-sportpage>|<cmd-friendspage>|<cmd-webmailpage>|<cmd-videopage>|<cmd-musicpage>;
+
+<cmd-move-up> = važiuok aukščiau;
+<cmd-move-down> = važiuok žemiau;
+<cmd-move-begining> = važiuok į pradžią;
+<cmd-move-end> = važiuok į galą;
+<cmd-move-next-item> = sekantis laukas;
+<cmd-tab-new> = atverk kortelę;
+<cmd-tab-close> = užverk kortelę;
+<cmd-tab-prev> = praeita kortelė;
+<cmd-tab-next> = tolimesnė kortelė;
+<cmd-tab-first> = pirma kortelė;
+<cmd-tab-close-all> = užverk visas korteles;
+<cmd-link-open-in-new-window> = atverk nuorodą naujame lange;
+<cmd-link-open-in-this-tab> = atverk nuorodą naujoje kortelėje;
+<cmd-window-new> = atverk naują langą;
+<cmd-window-close> = užverk langą;
+<cmd-searchpage> = atverk ieškos puslapį;
+<cmd-page-reload> = perkrauk tinklapį;
+<cmd-page-stop> = stabdyk krovimą;
+<cmd-location-bar> = aktyvink adreso juostą;
+<cmd-full-screen-on> = rodyk visame ekrane;
+<cmd-full-regular> = rodyk įprastą ekraną;
+<cmd-print-preview> = rodyk spausdinimo ekraną;
+<cmd-print> = spausdink tinklapį;
+<cmd-wheatherpage> = rodyk orus;
+<cmd-newspage> = rodyk naujienas;
+<cmd-sportpage> = rodyk sportą;
+<cmd-friendspage> = rodyk draugus;
+<cmd-webmailpage> = rodyk paštą naršyklėje;
+<cmd-videopage> = rodyk filmus;
+<cmd-musicpage> = rodyk muziką;
