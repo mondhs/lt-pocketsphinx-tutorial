@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 '''
 @author: Mindaugas Greibus
-This sample works with VAD branch http://svn.code.sf.net/p/cmusphinx/code/branches/feature-vad
+This sample works with trunk
 '''
 
 from pocketsphinx import Decoder
@@ -40,21 +40,24 @@ stream = p.open(format=FORMAT,
 print ("READY....")
 
 frames = []
-cur_vad_state = 0;
 
+
+utt_started = False
 decoder.start_utt(None)
-
 while True:
     data = stream.read(CHUNK)
     time.sleep (0.100)
     #frames.append(data)
     decoder.process_raw(data, False, False)
-    vad_state = decoder.get_vad_state()
-    if vad_state and not cur_vad_state:
+    in_speech = decoder.get_in_speech()
+    
+    if in_speech and not utt_started:
         #silence -> speech transition,
         #let user know that he is heard
-        print("Listening...\n")
-    if not vad_state and cur_vad_state:
+        print("Started...\n")
+        utt_started = True
+        
+    if not in_speech and utt_started:
         #speech -> silence transition,
         #time to start new utterance
         decoder.end_utt()
@@ -62,10 +65,11 @@ while True:
         hypothesis = decoder.hyp()
         if hypothesis is not None:
             print ('Best hypothesis: ', hypothesis.best_score, hypothesis.hypstr)
+        utt_started = False
         decoder.start_utt(None)
         #Indicate listening for next utterance
         print ("READY....")
-    cur_vad_state = vad_state
+
 #close micraphone
 stream.stop_stream()
 stream.close()
