@@ -1,5 +1,21 @@
 '''
-Created on Dec 29, 2013
+Created on Jul 17, 2014
+
+Patch required:
+
+svn diff pocketsphinx
+Index: pocketsphinx/src/programs/continuous.c
+===================================================================
+--- pocketsphinx/src/programs/continuous.c	(revision 12538)
++++ pocketsphinx/src/programs/continuous.c	(working copy)
+@@ -256,6 +256,8 @@
+ main(int argc, char *argv[])
+ {
+     char const *cfg;
++ 
++    setvbuf(stdout, (char *) NULL, _IOLBF, 0); /* make line buffered stdout */
+ 
+     config = cmd_ln_parse_r(NULL, cont_args_def, argc, argv, TRUE);
 
 
 @author: Mindaugas Greibus
