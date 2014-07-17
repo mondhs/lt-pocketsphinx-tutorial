@@ -76,9 +76,8 @@ class MySpawned(Gtk.Window):
 
     def process(self, widget, data=None):
 #         params = ['du', '--si', '/']
-        params = ["pocketsphinx_continuous", '-hmm', "../models/hmm/lt.cd_cont_200/",
-              "-jsgf", "../models/lm/robotas.gram",
-             "-dict", "../models/dict/robotas.dict"]
+#        params = ["pocketsphinx_continuous", '-hmm', "../models/hmm/lt.cd_cont_200/", "-jsgf", "../models/lm/robotas.gram", "-dict", "../models/dict/robotas.dict"]
+        params = ["/home/mgreibus/src/speech/sphinx/lt-pocketsphinx-tutorial/impl/demo-py/robotas_mic_ps.py"]
         def scroll_to_end(textview):
             i = textview.props.buffer.get_end_iter()
             mark = textview.props.buffer.get_insert()
